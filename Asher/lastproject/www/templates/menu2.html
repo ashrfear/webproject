@@ -1,0 +1,58 @@
+<ion-view  class=" " id="page7" title="Home">
+	<!-- loadMenu() is called to load the menu array  -->
+		<ion-content class="has-header" padding="false"  ng-init="loadMenu()"  >
+	 
+	 
+		<!-- $index is the iterating variable
+		 To access individual elements of the array we use menu[$index]
+		 Each row contains two columns. We use $index % 2 === 0 so that 
+		 we only add 1 row when the $index is incremented by 2, rather than adding 2 rows. 
+		-->
+			<div class="row" ng-repeat="item in menu" ng-if="$index % 2 === 0" style="border-top: 1px solid #999;"></div>
+	 
+	 
+				<!-- Column 1-->
+				<!-- We use $index to 1st column elements -->
+				<div class="col col-50 " ng-if="$index menu.length" style="padding:1px;border-right:1px solid #999" ></div>
+					  <div class="item item-image" style="border-width: 0px; border-style: none;">
+						<img ng-click="showProductInfo(menu[$index].$id)" ng-src="{{'img/fk/2.jpg'}}" width="100%" />
+					  </div>
+					  <a class="item item-icon-right assertive" href="#"  style="border-width: 0px; border-style: none;" >
+						<p ng-click="showProductInfo(menu[$index].$id)" style="font-size: 20px;text-align:left;">{{menu[$index].name}} <br/>
+							<span style="font-weight: bold;color: black;">RM 45 {{menu[$index].price}}</span>
+						</p>
+						<i style="font-size: 28px; margin-right:0px;right:0px;"  ng-click="addToCart(menu[$index])" class="icon ion-ios-cart"></i>
+					  </a>
+				</div>
+	 
+				<!-- Column 2-->
+				<!-- We use $index+1 to access 2nd column elements -->
+				<div class="col col-50 " ng-if="$index+1 menu.length" style="padding:1px;"></div>
+					  <div class="item item-image" style="border-width: 0px; border-style: none;">
+						<img ng-click="showProductInfo(menu[$index+1].$id)" ng-src="{{'img/fk/3.jpg'}}" width="100%" />
+					  </div>
+					  <a class="item item-icon-right assertive" href="#"  style="border-width: 0px; border-style: none;" >
+						<p ng-click="showProductInfo(menu[$index+1].$id)" style="font-size: 20px;text-align:left;">{{menu[$index+1].name}} <br/>
+							<span style="font-weight: bold;color: black;">RM 45 {{menu[$index+1].price}}</span>
+						</p>
+						<i style="font-size: 28px;right: 0px;"  ng-click="addToCart(menu[$index+1])" class="icon ion-ios-cart"></i>
+					  </a>
+				</div>
+
+				<div class="col col-50 " ng-if="$index+1 menu.length" style="padding:1px;"></div>
+					  <div class="item item-image" style="border-width: 0px; border-style: none;">
+						<img ng-click="showProductInfo(menu[$index+1].$id)" ng-src="{{'img/fk/6.jpg'}}" width="100%" />
+					  </div>
+					  <a class="item item-icon-right assertive" href="#"  style="border-width: 0px; border-style: none;" >
+						<p ng-click="showProductInfo(menu[$index+1].$id)" style="font-size: 20px;text-align:left;">{{menu[$index+1].name}} <br/>
+							<span style="font-weight: bold;color: black;">RM 45 {{menu[$index+1].price}}</span>
+						</p>
+						<i style="font-size: 28px;right: 0px;"  ng-click="addToCart(menu[$index+1])" class="icon ion-ios-cart"></i>
+					  </a>
+				</div>
+	 
+			</div>
+	 
+	 
+		</ion-content>
+	</ion-view>
